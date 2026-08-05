@@ -1,0 +1,37 @@
+# Pension / Retirement System Benchmark Comparison — Claude Skill
+
+A reusable [Claude Skill](https://support.claude.com/en/articles/12512176-what-are-skills) that automates comparing a public pension or retirement system's funding, investment, cost, and governance metrics against national and state/regional peer benchmarks.
+
+## What it does
+
+- Gathers a plan's own primary documents (actuarial valuation, audited financial statements, investment performance report)
+- Finds the right **national** benchmark (e.g. NCPERS's annual Public Retirement Systems Study for U.S. public plans) and the right **state/regional** benchmark (e.g. a state pension oversight office's aggregated statewide data)
+- Cross-checks numbers across sources to catch extraction/transcription errors before relying on them
+- Computes and explains the comparison — funded ratio (on multiple bases where available), discount rate, investment returns, asset allocation, costs, contribution rates, amortization method/period, COLA policy
+- Returns a clean **chat summary**, not an auto-generated file — you decide how and whether to turn it into a doc, deck, or memo
+
+## Install
+
+1. Download `pension-benchmark-comparison.skill` from this repo's [Releases](../../releases) page.
+2. In Claude, go to **Settings → Capabilities (Skills) → Upload skill**, and select the downloaded file.
+3. Make sure code execution is enabled — the skill requires it.
+
+## Use
+
+Just describe your comparison task in chat, for example:
+
+> "Compare the [City] Police & Fire pension plan against NCPERS national data and our state's pension oversight database. Here are the plan's latest actuarial valuation, financial statement, and investment report: [links or uploads]."
+
+Claude will locate the benchmark sources, cross-check figures against the plan's own documents, and hand back a structured comparison in the conversation.
+
+To refresh a comparison with a newer quarterly report or valuation, just point Claude at the new documents — no need to redo the setup.
+
+## Notes
+
+- Built and tested on a real municipal police & fire pension board's comparison against NCPERS and a state pension oversight database. Generalized so it works for any public pension plan, any state or country, and whichever national benchmark fits that plan's category.
+- This is not investment, actuarial, or legal advice. The skill organizes and compares publicly available figures — always verify against primary sources before relying on the output in an official capacity.
+- Built on Anthropic's open [Agent Skills](https://agentskills.io) standard.
+
+## License
+
+MIT — see [LICENSE](LICENSE).
